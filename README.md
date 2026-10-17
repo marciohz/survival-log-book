@@ -2,7 +2,7 @@
 
 *Tema do projeto:* Survival Log Book — catálogo de franquias de jogos de terror. Na página inicial, o usuário escolhe uma franquia antes de acessar os jogos dela.
 
-*Vídeo explicativo: youtube.com/watch?v=jyt3SDKfook&feature=youtu.be *
+Vídeo explicativo: https://www.youtube.com/watch?v=jyt3SDKfook 
 
 ### O que foi feito nesta fase
 - Definição do tema e do nome do projeto: Survival Log Book.
