@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+## Fase 1: Wireframe
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+*Tema do projeto:* Survival Log Book — catálogo de franquias de jogos de terror. Na página inicial, o usuário escolhe uma franquia antes de acessar os jogos dela.
 
-Currently, two official plugins are available:
+Vídeo explicativo: https://www.youtube.com/watch?v=jyt3SDKfook 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### O que foi feito nesta fase
+- Definição do tema e do nome do projeto: Survival Log Book.
+- Planejamento de uma página inicial focada nas franquias, sem abrir diretamente um jogo.
+- Definição das franquias iniciais: Resident Evil, Silent Hill, Alien, Dead by Daylight e Bloodborne.
+- Planejamento dos wireframes responsivos para celular, tablet e desktop.
+- Definição de navegação sem menu de três risquinhos.
+- Planejamento da página de cada franquia, que exibirá seus jogos após a seleção.
 
-## React Compiler
+### Decisões técnicas
+- Prioridade para um layout responsivo, começando pela versão mobile.
+- Uso de tema visual escuro, com preto, roxo e texto claro.
+- A página inicial apresenta franquias; os jogos aparecem somente depois que o usuário escolhe uma franquia.
+- Os wireframes usam espaços reservados para imagens, que serão adicionadas posteriormente.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Desafios bonificados entregues nesta fase (se houver)
+- Ainda não definido.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Dependências adicionadas e justificativa (se houver)
+- Nenhuma nesta fase.
