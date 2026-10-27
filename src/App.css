@@ -1,32 +1,244 @@
-* {
-  box-sizing: border-box;
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--fundo, #0b0912);
+  color: var(--texto, #f5f3ff);
 }
 
-html,
-body,
-#root {
+.container {
   width: 100%;
-  min-height: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-body {
+.conteudo {
+  flex: 1;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  border-bottom: 1px solid var(--borda, #30253f);
+  padding: 20px 0;
+  background: var(--fundo, #0b0912);
+}
+
+.logo {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logo span {
   display: block;
-  background: #08060d;
-  color: #f5f3ff;
+  color: var(--roxo, #a855f7);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Títulos */
+.titulo-lista {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  border-bottom: 3px solid var(--roxo-escuro, #6b21a8);
 }
 
-img {
+.titulo-secao {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 2px;
+  background: var(--roxo, #a855f7);
+}
+
+/* Grade */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Cards */
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: var(--superficie, #171321);
+  color: var(--texto, #f5f3ff);
+  border: 2px solid var(--borda, #30253f);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--roxo, #a855f7);
+  transform: translateY(-2px);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #1b1a2b;
+}
+
+.card-corpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 6px;
+}
+
+.card-corpo h3 {
+  font-size: 1.05rem;
+}
+
+.card-corpo p {
+  color: var(--texto-suave, #aaa2bb);
+  font-size: 0.9rem;
+}
+
+.seta {
+  align-self: flex-end;
+  color: var(--roxo, #a855f7);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Página da franquia */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--borda, #30253f);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+  }
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: var(--texto-suave, #aaa2bb);
+  max-width: 420px;
+}
+
+.hero-banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #171321;
+}
+
+@media (min-width: 1024px) {
+  .hero-banner {
+    aspect-ratio: 11 / 2;
+  }
+}
+
+.jogo-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 6px 4px;
+}
+
+.jogo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jogo-info h3 {
+  font-size: 1rem;
+}
+
+.jogo-meta {
+  color: var(--texto-suave, #aaa2bb);
+  font-size: 0.85rem;
+}
+
+.vazio {
+  color: var(--texto-suave, #aaa2bb);
+}
+
+/* Rodapé */
+.rodape {
+  border-top: 1px solid var(--borda, #30253f);
+  padding: 20px 0;
+}
+
+.rodape img {
   display: block;
   max-width: 100%;
+  height: 48px;
+  width: auto;
+  margin: 0 auto;
 }
 
-@media (max-width: 640px) {
-  section {
-    min-width: 0;
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .conteudo {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
   }
 }
