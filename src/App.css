@@ -1,0 +1,323 @@
+:root {
+  /* Cores */
+  --fundo: #0b0912;
+  --superficie: #171321;
+  --superficie-clara: #1b1a2b;
+  --borda: #30253f;
+  --texto: #f5f3ff;
+  --texto-suave: #aaa2bb;
+  --roxo: #a855f7;
+  --roxo-escuro: #6b21a8;
+
+  /* Espaçamentos */
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 24px;
+  --espaco-6: 40px;
+  --espaco-7: 56px;
+
+  /* Tipografia */
+  --fonte: system-ui, "Segoe UI", Roboto, sans-serif;
+  --tamanho-pequeno: 0.95rem;
+  --tamanho-base: 1rem;
+  --tamanho-titulo-card: 1.3rem;
+  --tamanho-titulo-secao: 1.25rem;
+  --tamanho-titulo-lista: 1.8rem;
+  --tamanho-titulo-hero: 2.6rem;
+
+  /* Outros */
+  --raio: 14px;
+  --largura-maxima: 1800px;
+}
+
+/* Base (mobile) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte);
+  font-size: var(--tamanho-base);
+  line-height: 1.5;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding-left: var(--espaco-4);
+  padding-right: var(--espaco-4);
+}
+
+.conteudo {
+  flex: 1;
+  padding-top: var(--espaco-5);
+  padding-bottom: var(--espaco-5);
+}
+
+/* Cabeçalho */
+.cabecalho {
+  padding: var(--espaco-4) 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.logo span {
+  display: block;
+  color: var(--roxo);
+}
+
+/* Títulos */
+.titulo-lista {
+  font-size: var(--tamanho-titulo-lista);
+  text-transform: uppercase;
+  padding-bottom: var(--espaco-2);
+  margin-bottom: var(--espaco-5);
+  border-bottom: 3px solid var(--roxo-escuro);
+}
+
+.titulo-secao {
+  font-size: var(--tamanho-titulo-secao);
+  text-transform: uppercase;
+  margin-bottom: var(--espaco-5);
+}
+
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: var(--espaco-2);
+  border-radius: 2px;
+  background: var(--roxo);
+}
+
+.secao-franquia {
+  margin-top: var(--espaco-7);
+  scroll-margin-top: var(--espaco-4);
+}
+
+/* Apresentação da franquia */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-5);
+  align-items: center;
+  padding-bottom: var(--espaco-5);
+  margin-bottom: var(--espaco-5);
+  border-bottom: 1px solid var(--borda);
+}
+
+.hero-titulo {
+  font-size: var(--tamanho-titulo-hero);
+  text-transform: uppercase;
+  margin-bottom: var(--espaco-3);
+}
+
+.hero-texto p {
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+  max-width: 520px;
+}
+
+.hero-banner {
+  width: 100%;
+  aspect-ratio: 16 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Logos das franquias: sem corte */
+.hero-banner.hero-logo {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--superficie-clara);
+}
+
+.card .card-logo {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* Fundo preto onde o logo tem fundo preto */
+.card .card-logo[src*="resident-evil-logo"],
+.card .card-logo[src*="Alien.png"],
+.hero-banner.hero-logo[src*="resident-evil-logo"],
+.hero-banner.hero-logo[src*="Alien.png"] {
+  background: #000;
+}
+
+/* Fundo claro onde o logo é escuro */
+.card .card-logo[src*="Silent_Hill"],
+.card .card-logo[src*="Dead-by-Daylight"],
+.card .card-logo[src*="Bloodborne"],
+.hero-banner.hero-logo[src*="Silent_Hill"],
+.hero-banner.hero-logo[src*="Dead-by-Daylight"],
+.hero-banner.hero-logo[src*="Bloodborne"] {
+  background: #e9e7f0;
+}
+
+/* Grade: 1 coluna no mobile */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-5);
+}
+
+/* Cards */
+.card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  padding: var(--espaco-4);
+  background: var(--superficie);
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+a.card {
+  min-height: 340px;
+}
+
+.card:hover {
+  border-color: var(--roxo);
+  transform: translateY(-2px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--superficie-clara);
+}
+
+.card-corpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+  padding: var(--espaco-1) var(--espaco-2);
+}
+
+.card-corpo h3 {
+  font-size: var(--tamanho-titulo-card);
+}
+
+.card-corpo p {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+}
+
+.seta {
+  align-self: flex-end;
+  color: var(--roxo);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.jogo-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--espaco-2) var(--espaco-2);
+}
+
+.jogo-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.jogo-info h4 {
+  font-size: 1.15rem;
+}
+
+.jogo-meta {
+  color: var(--texto-suave);
+  font-size: var(--tamanho-pequeno);
+}
+
+/* Rodapé */
+.rodape {
+  padding: var(--espaco-4) 0;
+  border-top: 1px solid var(--borda);
+}
+
+.rodape-imagens {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaco-2);
+}
+
+.rodape-imagens img {
+  width: auto;
+  height: 56px;
+  border-radius: 4px;
+}
+
+/* Tablet: a partir de 768px */
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--espaco-6);
+    padding-right: var(--espaco-6);
+  }
+
+  .conteudo {
+    padding-top: var(--espaco-6);
+    padding-bottom: var(--espaco-6);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: a partir de 1024px */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--espaco-6);
+  }
+
+  .hero-banner {
+    aspect-ratio: 11 / 2;
+  }
+
+  .hero-banner.hero-logo {
+    aspect-ratio: 16 / 6;
+  }
+}
