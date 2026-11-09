@@ -321,3 +321,33 @@ a.card {
     aspect-ratio: 16 / 6;
   }
 }
+/* Favoritar jogo (Fase 3: interação com useState) */
+.jogo-acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+}
+
+.btn-favorito {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--texto-suave);
+  font-size: 1.8rem;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.btn-favorito:hover {
+  color: var(--roxo);
+  transform: scale(1.15);
+}
+
+.btn-favorito.ativo {
+  color: #ef4444;
+}
+
+.card-favorito {
+  border-color: var(--roxo);
+}
