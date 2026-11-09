@@ -351,3 +351,15 @@ a.card {
 .card-favorito {
   border-color: var(--roxo);
 }
+
+/* Logo do site no cabecalho */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
